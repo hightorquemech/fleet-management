@@ -1,3 +1,6 @@
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
 :root {
   font-family:  'Montserrat', Helvetica, Arial, Lucida, sans-serif;
   font-weight: 400;
@@ -7,16 +10,15 @@
   /* COLORS */
   --color-primary: #259FBA;
   --color-grey: #1D1D1D;
-  --color-grey-x-light: #f7f7f7;
+  --color-primary-light: rgba(37, 159, 186, 0.075);
 
   /* SPACE */
   --space-xxs: .2rem;
   --space-xs: .6rem;
   --space-sm: 1rem;
-  --space-med: 2.5rem;
-  --space-lg: 6rem;
+  --space-med: 2rem;
+  --space-lg: 5rem;
   --space-xl: 12rem;
-  --space-xxl: 20rem;
 }
 
 html {
@@ -60,10 +62,10 @@ body {
   display: grid;
 
   grid-template-columns: 1fr repeat(10, 1fr) 1fr;
-  grid-template-rows: 55vh repeat(2, min-content) 5rem;
+  grid-template-rows: 52vh repeat(2, min-content) 5rem;
 
   & > *:not(:first-child) {
-    padding: 2.5rem;
+    padding: var(--space-med);
   }
 }
 
@@ -77,7 +79,6 @@ header {
   background-position: right bottom 8%;
   display: flex;
   flex-direction: column;
-  height: 55vh;
   z-index: 1;
 
   .logo {
@@ -139,13 +140,89 @@ header {
   }
 }
 
-/* !TODO - start back up here new section */
-
 /* ====== CALCULATION ====== */
 
 .calculation {
   grid-column: 1 / -1;
-  height: 1200px;
-  background: var(--color-grey-x-light);
+
+  background: var(--color-primary-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+
+  & > * {
+    width: 100%;
+  }
+
+  & label {
+    font-size: .9rem;
+    font-weight: 500;
+  }
+
+  & .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    & > * {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+
+      & h3 {
+        width: 15rem;
+        align-self: center;
+      }
+
+      & .fa-solid {
+        font-size: 1rem;
+        color: var(--color-grey);
+      }
+
+      & .col-input {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: end;
+        gap: var(--space-sm);
+
+        & input {
+          background: transparent;
+          border: none;
+          border-bottom: 2px solid var(--color-grey);
+          width: 5rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  & .savings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & .container {
+      display: flex;
+    }
+
+    & .col-input {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-sm);
+
+      & input {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--color-grey);
+        width: 7rem;
+        text-align: center;
+      }
+    }
+  }
 }
 

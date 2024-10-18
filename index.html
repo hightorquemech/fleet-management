@@ -46,71 +46,95 @@
       </p>
     </section>
 
-    <section class="calculation">
-      <form action="">
+    <form class="calculation">
+      <div class="container">
         <div class="other-guys">
-          <h3>Your oil change with "The Other Guys"</h3>
+          <h3>Your oil change with the "other guys"</h3>
           <div class="col-input col-input-1">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="og-oil-change">Cost per Oil Change</label>
+            <input id="og-oil-change" name="og-oil-change" type="number" />
           </div>
+          <i class="fa-solid fa-plus"></i>
+
           <div class="col-input col-input-2">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="og-lost-wage">Lost Employee Wage (Hourly)</label>
+            <input id="og-lost-wage" name="og-lost-wage" type="number" />
           </div>
+          <i class="fa-solid fa-plus"></i>
+
           <div class="col-input col-input-3">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="og-lost-billed-hours">Lost Company Billable Hours</label>
+            <input id="og-lost-billed-hours" name="og-lost-billed-hours" type="number" />
           </div>
+          <i class="fa-solid fa-xmark"></i>
+
           <div class="col-input col-input-4">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="og-num-vehicles">Number of Vehicles</label>
+            <input id="og-num-vehicles" name="og-num-vehicles" type="number" />
           </div>
+          <i class="fa-solid fa-xmark"></i>
+
           <div class="col-input col-input-5">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="og-yearly-services">Number of Services per Year</label>
+            <input id="og-yearly-services" name="og-yearly-services" type="number" />
           </div>
           <div class="total"></div>
         </div>
-
+  
         <div class="with-us">
-          <h3>Your oil change with "The Other Guys"</h3>
+          <h3>Your oil change with the "other guys"</h3>
           <div class="col-input col-input-1">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="wu-oil-change">Cost per Oil Change</label>
+            <input id="wu-oil-change" name="wu-oil-change" type="number" />
           </div>
+          <i class="fa-solid fa-plus"></i>
+
           <div class="col-input col-input-2">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="wu-lost-wage">Lost Employee Wage (Hourly)</label>
+            <input id="wu-lost-wage" name="wu-lost-wage" type="number" />
           </div>
+          <i class="fa-solid fa-plus"></i>
+
           <div class="col-input col-input-3">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="wu-lost-billed-hours">Lost Company Billable Hours</label>
+            <input id="wu-lost-billed-hours" name="wu-lost-billed-hours" type="number" />
           </div>
+          <i class="fa-solid fa-xmark"></i>
+
           <div class="col-input col-input-4">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="wu-num-vehicles">Number of Vehicles</label>
+            <input id="wu-num-vehicles" name="wu-num-vehicles" type="number" />
           </div>
+          <i class="fa-solid fa-xmark"></i>
+
           <div class="col-input col-input-5">
-            <label for=""></label>
-            <input type="number" />
-            <i></i>
+            <label for="wu-yearly-services">Number of Services per Year</label>
+            <input id="wu-yearly-services" name="wu-yearly-services" type="number" />
           </div>
           <div class="total"></div>
         </div>
+        
+      </div>
 
-        <div class="savings"></div>
-      </form>
-    </section>
+      <div class="savings">
+        <div class="container">
+          <div class="col-input col-input-savings-a">
+            <label for="og-yearly-total">Total "A" per year</label>
+            <input id="og-yearly-total" name="og-yearly-total" type="number" />
+          </div>
+          <div class="col-input col-input-savings-b">
+            <label for="wu-yearly-total">Total "B" per year</label>
+            <input id="wu-yearly-total" name="wu-yearly-total" type="number" />
+          </div>
+        </div>
+        <div class="total-savings">
+          <div class="col-input col-input-total">
+            <label for="total-savings">"A" - "B" = total savings per year<br> So, why aren't you using us?</label>
+            <input id="total-savings" name="total-savings" type="number" />
+          </div>
+        </div>
+      </div>
+    </form>
     <footer class="footer"></footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
