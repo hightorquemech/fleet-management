@@ -1,12 +1,29 @@
 :root {
   font-family:  'Montserrat', Helvetica, Arial, Lucida, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
 
   background-color: #FFFFFF;
+
+  /* COLORS */
+  --color-primary: #259FBA;
+  --color-grey: #1D1D1D;
+  --color-grey-x-light: #f7f7f7;
+
+  /* SPACE */
+  --space-xxs: .2rem;
+  --space-xs: .6rem;
+  --space-sm: 1rem;
+  --space-med: 2.5rem;
+  --space-lg: 6rem;
+  --space-xl: 12rem;
+  --space-xxl: 20rem;
 }
 
-/* RESETS */
+html {
+  font-size: 125%;
+}
+
+/* ====== RESET (Josh Comeau) ====== */
 /* 1. Use a more-intuitive box-sizing model. */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -38,32 +55,37 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/* Header */
+/* ====== GRID SYSTEM ====== */
+body {
+  display: grid;
+
+  grid-template-columns: 1fr repeat(10, 1fr) 1fr;
+  grid-template-rows: 55vh repeat(2, min-content) 5rem;
+
+  & > *:not(:first-child) {
+    padding: 2.5rem;
+  }
+}
+
+/* ====== HEADER ====== */
 
 header {
-  position: relative;
+  grid-column: 1 / -1;
+
+  background: linear-gradient(to right, rgba(0,0,0, 0.625), rgba(0,0,0, 0.625)), url('/src/img/ht-containers.jpg');
+  background-size: cover;
+  background-position: right bottom 8%;
   display: flex;
   flex-direction: column;
   height: 55vh;
-
-  &:before {    
-    content: "";
-    background: right bottom 8% / cover no-repeat url('/src/img/ht-containers.jpg');
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    filter: brightness(28%);
-    z-index: -1;
-  }
+  z-index: 1;
 
   .logo {
     width: 30%;
-    background: #242424;
+    background: var(--color-grey);
     padding: .5rem;
-    padding-right: 3rem;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    padding-right: 3.5rem;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
   }
 
   .copy {
@@ -72,8 +94,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 15%;
-
+    padding-left: var(--space-lg);
 
     h1 {
       font-weight: bold;
@@ -85,4 +106,46 @@ header {
       font-weight: 300;
     }
   }
+
+  .blue-clip-path {
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  }
 }
+
+/* ====== MAIN COPY ====== */
+
+.main-copy {
+  position: relative;
+  grid-column: 1 / -1;
+
+  .blue-clip-path {
+    position: absolute;
+    top: -0.9rem;
+    left: 0;
+    z-index: 0;
+    background: var(--color-primary);
+    height: 2rem;
+    width: 80%;
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  }
+
+  & h2 {
+  font-size: 2rem;
+  margin-bottom: .2rem;
+  }
+
+  & p {
+    text-align: center;
+  }
+}
+
+/* !TODO - start back up here new section */
+
+/* ====== CALCULATION ====== */
+
+.calculation {
+  grid-column: 1 / -1;
+  height: 1200px;
+  background: var(--color-grey-x-light);
+}
+
