@@ -14,6 +14,8 @@
     <title>High Torque - Fleet</title>
   </head>
   <body>
+
+    <!-- HEADER -->
     <header>
       <div class="logo">
         <img src="./src/img/ht-logo.png" alt="High Torque Logo" />
@@ -25,6 +27,7 @@
       </div>
     </header>
 
+    <!-- MAIN COPY -->
     <section class="main-copy">
       <div class="blue-clip-path"></div>
       <h2>Are we right for you?</h2>
@@ -46,6 +49,7 @@
       </p>
     </section>
 
+    <!-- CALCULATIONS -->
     <form class="calculation">
       <div class="container">
         <div class="other-guys">
@@ -111,7 +115,6 @@
             <input id="wu-yearly-services" name="wu-yearly-services" type="number" />
           </div>
         </div>
-        
       </div>
 
       <div class="savings">
@@ -132,8 +135,107 @@
           </div>
         </div>
       </div>
-      <button>Next</button>
     </form>
+
+    <!-- COMPARE -->
+    <section class="compare">
+      <div class="container">
+        <div class="calculations">
+          <h3>How do we compare? <br><span>Costs for non-members</span></h3>
+          <div class="col-input col-input-compare-a">
+            <label for="compare-a">Total "A" per year</label>
+            <input disabled id="compare-a" name="compare-a" type="number" />
+          </div>
+          <div class="col-input col-input-compare-b">
+            <label for="compare-b">Your fleet manager wage per hour</label>
+            <input id="compare-b" name="compare-b" type="number" />
+          </div>
+          <div class="col-input col-input-compare-c">
+            <label for="compare-c">Fleet manager wage X 200hrs/year (10% decreased efficiency)</label>
+            <input id="compare-c" name="compare-c" type="number" />
+          </div>
+          <div class="col-input col-input-compare-d">
+            <label for="compare-d">Annual installed GPS cost</label>
+            <input id="compare-d" name="compare-d" type="number" />
+          </div>
+          <div class="col-input col-input-compare-e">
+            <label for="compare-e">Total Non-Member "Fleet Management" costs per year</label>
+            <input disabled id="compare-e" name="compare-e" type="number" />
+          </div>
+
+          <h3 class="middle-heading">Your fleet, &nbsp;<span>managed</span></h3>
+
+          <div class="col-input col-input-compare-f">
+            <label for="compare-f">Monthly membership cost per gas vehicle</label>
+            <input id="compare-f" name="compare-f" type="number" />
+          </div>
+          <div class="col-input col-input-compare-g">
+            <label for="compare-g">Number of gas vehicles</label>
+            <input id="compare-g" name="compare-g" type="number" />
+          </div>
+          <div class="col-input col-input-compare-h">
+            <label for="compare-h">Total Fleet Management <strong>AND</strong> yearly maintenance costs</label>
+            <input disabled id="compare-h" name="compare-h" type="number" />
+          </div>
+        </div>
+
+        <!-- OFFERING -->
+        <div class="offering">
+          <h3>The future of fleet <br> management is here:</h3>
+          <ul>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Mileage Tracking with GPS</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-calendar"></i>
+              <p>Automated Maintenance Reminders</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-wrench"></i>
+              <p>Included Oil Changes</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-sack-dollar"></i>
+              <p>Discounts on Parts & Labor</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-star"></i>
+              <p>VIP Appointments</p>
+            </li>
+          </ul>
+
+          <div class="card">
+            <div class="banner">
+              <span class="highlight"></span>
+              <p>Gasoline Vehicles</p>
+              <p>$120/month/unit</p>
+            </div>
+            <p>Vehicle tracking with OBD compatible GPS device <br> 
+              Maintenance interval tracking with automatic reminders when a vehicle is due for service
+            </p>
+            <p>Includes: <br>
+            Full oil change package w/ synthetic oil every 10,000km <br>
+            Full vehicle inspection every service <br>
+            Wiper blades, light bulbs and air filter replacement <br>
+            Interior detailing once per year
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="banner">
+              <span class="highlight"></span>
+              <p>Diesel Vehicles</p>
+              <p>$150/month/unit</p>
+            </div>
+            <p>Includes everything above for diesel engines</p>
+          </div>
+        </div>
+      </div>
+      <button class="print">Print</button>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
       <p class="contact">Contact Us</p>
       <div class="spacw-holder"></div>

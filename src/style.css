@@ -24,9 +24,26 @@ html {
   font-size: 125%;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  width: 15rem;
+  align-self: center;
+  text-align: center;
+}
+
 input:focus {
   outline: 2px solid var(--color-primary);
   border-radius: 2px;
+}
+
+label {
+  font-size: .9rem;
+  font-weight: 500;
 }
 
 /* ====== RESET (Josh Comeau) ====== */
@@ -64,9 +81,8 @@ p, h1, h2, h3, h4, h5, h6 {
 /* ====== GRID SYSTEM ====== */
 body {
   display: grid;
-
   grid-template-columns: 1fr repeat(10, 1fr) 1fr;
-  grid-template-rows: 52vh repeat(2, min-content) 5rem;
+  grid-template-rows: 52vh repeat(3, min-content) 5rem;
 
   & > *:not(:first-child) {
     padding: var(--space-med);
@@ -100,11 +116,6 @@ header {
     flex-direction: column;
     justify-content: center;
     padding-left: var(--space-lg);
-
-    h1 {
-      font-weight: bold;
-      font-size: 3.5rem;
-    }
 
     p {
       font-size: 2.6rem;
@@ -159,30 +170,6 @@ form.calculation {
     width: 100%;
   }
 
-  & button {
-    align-self: flex-end;
-    padding: var(--space-xxs) var(--space-med);
-    border-radius: 3px;
-    border: 2px solid transparent;
-    background: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: all .2s;
-    cursor: pointer;
-  }
-
-  & button:hover {
-    border: 2px solid var(--color-grey);
-    background: var(--color-primary);
-    color: var(--color-grey);
-  }
-
-  & label {
-    font-size: .9rem;
-    font-weight: 500;
-  }
-
   & .container {
     display: flex;
     flex-wrap: wrap;
@@ -193,12 +180,6 @@ form.calculation {
       display: flex;
       flex-direction: column;
       gap: var(--space-xs);
-
-      & h3 {
-        font-size: 1.3rem;
-        width: 15rem;
-        align-self: center;
-      }
 
       & .fa-solid {
         font-size: 1rem;
@@ -224,14 +205,17 @@ form.calculation {
   }
 
   & .savings {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 
     & .container {
+      /* Heads up the above '.container' targets this '.container' */
       display: flex;
+      justify-content: space-around;
     }
 
+   
     & .col-input {
       display: flex;
       flex-direction: column-reverse;
@@ -250,8 +234,185 @@ form.calculation {
   }
 }
 
-/* ====== FOOTER ====== */
+/* ====== COMPARE ====== */
 
+.compare {
+  font-size: .9rem;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-med);
+  padding: var(--space-med) 0;
+
+  & .container {
+    width: 100%;
+    display: flex;
+    gap: var(--space-med);
+
+    & .calculations {
+      & > h3 {
+        margin-bottom: var(--space-sm);
+      }
+    }
+
+    & > * {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+
+      &:not(:last-of-type) {
+        gap: var(--space-sm);
+      }
+
+      & .middle-heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & h3 {
+        height: 4rem;
+        width: 100%;
+        margin-bottom: var(--space-xxs);
+
+        & span {
+          font-size: 1rem;
+        }
+
+        &:last-of-type {
+          margin-top: var(--space-xs);
+          margin-bottom: var(--space-xs);
+          span {
+            font-size: inherit;
+            color: var(--color-primary)
+          }
+        }
+      }
+
+      & .col-input {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: end;
+        gap: var(--space-sm);
+
+        & input {
+          background: transparent;
+          border: none;
+          border-bottom: 2px solid var(--color-grey);
+          width: 5rem;
+          text-align: center;
+        }
+
+        &.col-input-compare-e,
+        &.col-input-compare-h {
+          margin-top: var(--space-xxs);
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          text-align: center;
+          gap: var(--space-sm);
+
+          & input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--color-grey);
+            width: 7rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    & .offering {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+
+        & li {
+          display: flex;
+          align-items: center;
+          gap: var(--space-sm);
+          height: min-content;
+
+          & i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 5px;
+            background: var(--color-grey);
+            color: var(--color-primary);
+          }
+
+          & p {
+            font-weight: bold;
+          }
+        }
+      }
+
+      & .card {
+        display: flex;
+        flex-direction: column;
+
+        & .banner {
+          position: relative;
+          background: var(--color-grey);
+          color: var(--color-white);
+          display: flex;
+          justify-content: space-between;
+          padding: var(--space-xs) var(--space-med);
+          font-weight: bold;
+
+          & .highlight {
+            background-color: var(--color-primary);
+            position: absolute;
+            width: var(--space-xs);
+            left: 0;
+            top: 0;
+            bottom: 0;
+          }
+        }
+
+        & > p {
+          text-align: center;
+          padding: var(--space-xxs) 0;
+        }
+      }
+    }
+  }
+
+  & button {
+    align-self: flex-end;
+    padding: var(--space-xxs) var(--space-med);
+    border-radius: 3px;
+    border: 2px solid transparent;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .2s;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    border: 2px solid var(--color-grey);
+    background: var(--color-primary);
+    color: var(--color-grey);
+  }
+}
+
+/* ====== FOOTER ====== */
 
 footer.footer {
   padding: 0;
@@ -288,5 +449,12 @@ footer.footer {
     & i {
       margin-right: var(--space-xs);
     }
+  }
+}
+
+@media print {
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
