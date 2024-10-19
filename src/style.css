@@ -134,6 +134,7 @@ header {
   padding: var(--space-med);
   position: relative;
   grid-column: 1 / -1;
+  page-break-after: always;
 
   .blue-clip-path {
     position: absolute;
@@ -240,6 +241,7 @@ form.calculation {
 /* ====== COMPARE ====== */
 
 .compare {
+  break-before: always;
   padding: var(--space-med);
   font-size: .9rem;
   grid-column: 1 / -1;
@@ -255,6 +257,8 @@ form.calculation {
     gap: var(--space-med);
 
     & .calculations {
+      break-after: always;
+
       & > h3 {
         margin-bottom: var(--space-sm);
       }
@@ -537,8 +541,39 @@ form.calculation {
 }
 
 @media print {
+  @page {
+    margin: 0;
+  }
   body {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+  }
+
+
+  form.calculation {
+    background: unset;
+
+    & .container > * {
+      gap: unset;
+    }
+  }
+
+  .compare {
+    & .container {
+      & .calculations {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  .print, 
+  .contact,
+  .space-holder {
+    display: none;
+  }
+
+  footer {
+    height: 5rem;
+    margin-top: -2rem;
   }
 }
