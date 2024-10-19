@@ -83,10 +83,6 @@ body {
   display: grid;
   grid-template-columns: 1fr repeat(10, 1fr) 1fr;
   grid-template-rows: 52vh repeat(3, min-content) 5rem;
-
-  & > *:not(:first-child) {
-    padding: var(--space-med);
-  }
 }
 
 /* ====== HEADER ====== */
@@ -100,8 +96,12 @@ header {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  position: relative;
 
   .logo {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 30%;
     background: var(--color-grey);
     padding: .5rem;
@@ -131,6 +131,7 @@ header {
 /* ====== MAIN COPY ====== */
 
 .main-copy {
+  padding: var(--space-med);
   position: relative;
   grid-column: 1 / -1;
 
@@ -158,6 +159,7 @@ header {
 /* ====== CALCULATION ====== */
 
 form.calculation {
+  padding: var(--space-med);
   grid-column: 1 / -1;
 
   background: var(--color-primary-light);
@@ -174,6 +176,7 @@ form.calculation {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: var(--space-med);
 
     & > * {
       text-align: center;
@@ -237,17 +240,18 @@ form.calculation {
 /* ====== COMPARE ====== */
 
 .compare {
+  padding: var(--space-med);
   font-size: .9rem;
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-med);
-  padding: var(--space-med) 0;
 
   & .container {
-    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: var(--space-med);
 
     & .calculations {
@@ -257,9 +261,10 @@ form.calculation {
     }
 
     & > * {
-      flex: 1;
       display: flex;
       flex-direction: column;
+      min-width: 20rem;
+      max-width: 50%;
       gap: var(--space-xs);
 
       &:not(:last-of-type) {
@@ -414,7 +419,7 @@ form.calculation {
 
 /* ====== FOOTER ====== */
 
-footer.footer {
+.footer {
   padding: 0;
   grid-column: 1 / -1;
   background: var(--color-grey);
@@ -437,6 +442,7 @@ footer.footer {
     position: absolute;
     width: 33%;
     bottom: 0;
+    left: 0;
     height: calc(100% + 1.1rem);
     font-size: 2.6rem;
     font-weight: bold;
@@ -448,6 +454,84 @@ footer.footer {
 
     & i {
       margin-right: var(--space-xs);
+    }
+  }
+}
+
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 110%;
+  }
+
+  header .copy {
+    & h1 {
+      font-size: 3rem;
+    }
+
+    & p {
+      font-size: 2rem;
+    }
+  }
+
+  .footer > .contact {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 43.75em) {
+  html {
+    font-size: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: var(--space-xxs);
+    padding: var(--space-sm) !important;
+
+    & .space-holder {
+      display: none;
+    }
+
+    & .contact {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 43.75em) {
+  header {
+    & > .logo {
+      width: 50%;
+    }
+
+    & > .copy {
+      & h1 {
+        font-size: 2rem;
+      }
+  
+      & p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+  .footer > .contact {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 26.57em) {
+  header {
+    & > .logo {
+      width: 100%;
+      clip-path: unset;
+      padding: var(--space-xs);
+      height: 30%;
+
+      & > img {
+        height: 100%;
+        margin: 0 auto;
+      }
     }
   }
 }
