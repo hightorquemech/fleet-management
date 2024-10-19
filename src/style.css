@@ -146,7 +146,7 @@ header {
 
 /* ====== CALCULATION ====== */
 
-.calculation {
+form.calculation {
   grid-column: 1 / -1;
 
   background: var(--color-primary-light);
@@ -155,8 +155,27 @@ header {
   align-items: center;
   gap: var(--space-sm);
 
-  & > * {
+  & > *:not(:last-child) {
     width: 100%;
+  }
+
+  & button {
+    align-self: flex-end;
+    padding: var(--space-xxs) var(--space-med);
+    border-radius: 3px;
+    border: 2px solid transparent;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .2s;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    border: 2px solid var(--color-grey);
+    background: var(--color-primary);
+    color: var(--color-grey);
   }
 
   & label {
@@ -176,6 +195,7 @@ header {
       gap: var(--space-xs);
 
       & h3 {
+        font-size: 1.3rem;
         width: 15rem;
         align-self: center;
       }
@@ -266,7 +286,7 @@ footer.footer {
     color: var(--color-white);
 
     & i {
-      margin-right: var(--space-xxs);
+      margin-right: var(--space-xs);
     }
   }
 }

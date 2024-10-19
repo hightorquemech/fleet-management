@@ -78,11 +78,10 @@
             <label for="og-yearly-services">Number of Services per Year</label>
             <input id="og-yearly-services" name="og-yearly-services" type="number" />
           </div>
-          <div class="total"></div>
         </div>
   
         <div class="with-us">
-          <h3>Your oil change with the "other guys"</h3>
+          <h3>Your synthetic service with us</h3>
           <div class="col-input col-input-1">
             <label for="wu-oil-change">Cost per Oil Change</label>
             <input id="wu-oil-change" name="wu-oil-change" type="number" />
@@ -111,7 +110,6 @@
             <label for="wu-yearly-services">Number of Services per Year</label>
             <input id="wu-yearly-services" name="wu-yearly-services" type="number" />
           </div>
-          <div class="total"></div>
         </div>
         
       </div>
@@ -120,20 +118,21 @@
         <div class="container">
           <div class="col-input col-input-savings-a">
             <label for="og-yearly-total">Total "A" per year</label>
-            <input id="og-yearly-total" name="og-yearly-total" type="number" />
+            <input disabled id="og-yearly-total" name="og-yearly-total" type="number" />
           </div>
           <div class="col-input col-input-savings-b">
             <label for="wu-yearly-total">Total "B" per year</label>
-            <input id="wu-yearly-total" name="wu-yearly-total" type="number" />
+            <input disabled id="wu-yearly-total" name="wu-yearly-total" type="number" />
           </div>
         </div>
         <div class="total-savings">
           <div class="col-input col-input-total">
             <label for="total-savings">"A" - "B" = total savings per year<br> So, why aren't you using us?</label>
-            <input id="total-savings" name="total-savings" type="number" />
+            <input disabled id="total-savings" name="total-savings" type="number" />
           </div>
         </div>
       </div>
+      <button>Next</button>
     </form>
     <footer class="footer">
       <p class="contact">Contact Us</p>
