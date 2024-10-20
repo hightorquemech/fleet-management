@@ -90,7 +90,7 @@ body {
 header {
   grid-column: 1 / -1;
 
-  background: linear-gradient(to right, rgba(0,0,0, 0.625), rgba(0,0,0, 0.625)), url('./ht-containers.jpg');
+  background: linear-gradient(to right, rgba(0,0,0, 0.625), rgba(0,0,0, 0.625)), url('../ht-containers.jpg');
   background-size: cover;
   background-position: right bottom 8%;
   display: flex;
