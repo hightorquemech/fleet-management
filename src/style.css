@@ -456,6 +456,20 @@ form.calculation {
   & .tel, .email {
     color: var(--color-white);
 
+    & a {
+      text-decoration: none;
+    }
+
+    & a:link,
+    & a:visited {
+      color: var(--color-white);
+      transition: all .2s;
+    }
+
+    & a:hover {
+      color: var(--color-primary);
+    }
+
     & i {
       margin-right: var(--space-xs);
     }
