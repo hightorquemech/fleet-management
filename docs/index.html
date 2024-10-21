@@ -11,8 +11,8 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>High Torque - Fleet</title>
-    <script type="module" crossorigin src="./assets/index-BnW2GWzV.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Ckmkx8iS.css">
+    <script type="module" crossorigin src="./assets/index-EDDLgln4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-XsA_PcWA.css">
   </head>
   <body>
 
@@ -57,13 +57,19 @@
           <h3>Your oil change with the "other guys"</h3>
           <div class="col-input col-input-1">
             <label for="og-oil-change">Cost per Oil Change</label>
+            <span>
+            <i class="fa-solid fa-dollar-sign"></i>
             <input id="og-oil-change" name="og-oil-change" type="number" />
+            </span>
           </div>
           <i class="fa-solid fa-plus"></i>
 
           <div class="col-input col-input-2">
             <label for="og-lost-wage">Lost Employee Wage (Hourly)</label>
-            <input id="og-lost-wage" name="og-lost-wage" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input id="og-lost-wage" name="og-lost-wage" type="number" />
+            </span>
           </div>
           <i class="fa-solid fa-plus"></i>
 
@@ -89,19 +95,25 @@
           <h3>Your synthetic service with us</h3>
           <div class="col-input col-input-1">
             <label for="wu-oil-change">Cost per Oil Change</label>
-            <input id="wu-oil-change" name="wu-oil-change" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled value="135" id="wu-oil-change" name="wu-oil-change" type="number" />
+            </span>
           </div>
           <i class="fa-solid fa-plus"></i>
 
           <div class="col-input col-input-2">
             <label for="wu-lost-wage">Lost Employee Wage (Hourly)</label>
-            <input id="wu-lost-wage" name="wu-lost-wage" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled value="0" id="wu-lost-wage" name="wu-lost-wage" type="number" />
+            </span>
           </div>
           <i class="fa-solid fa-plus"></i>
 
           <div class="col-input col-input-3">
             <label for="wu-lost-billed-hours">Lost Company Billable Hours</label>
-            <input id="wu-lost-billed-hours" name="wu-lost-billed-hours" type="number" />
+            <input disabled value="0" id="wu-lost-billed-hours" name="wu-lost-billed-hours" type="number" />
           </div>
           <i class="fa-solid fa-xmark"></i>
 
@@ -122,17 +134,26 @@
         <div class="container">
           <div class="col-input col-input-savings-a">
             <label for="og-yearly-total">Total "A" per year</label>
-            <input disabled id="og-yearly-total" name="og-yearly-total" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="og-yearly-total" name="og-yearly-total" type="number" />
+            </span>
           </div>
           <div class="col-input col-input-savings-b">
             <label for="wu-yearly-total">Total "B" per year</label>
-            <input disabled id="wu-yearly-total" name="wu-yearly-total" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign "></i>
+              <input disabled id="wu-yearly-total" name="wu-yearly-total" type="number">
+            </span>
           </div>
         </div>
         <div class="total-savings">
           <div class="col-input col-input-total">
             <label for="total-savings">"A" - "B" = total savings per year<br> So, why aren't you using us?</label>
-            <input disabled id="total-savings" name="total-savings" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="total-savings" name="total-savings" type="number" />
+            </span>
           </div>
         </div>
       </div>
@@ -145,30 +166,48 @@
           <h3>How do we compare? <br><span>Costs for non-members</span></h3>
           <div class="col-input col-input-compare-a">
             <label for="compare-a">Total "A" per year</label>
-            <input disabled id="compare-a" name="compare-a" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="compare-a" name="compare-a" type="number" />
+            </span>
           </div>
           <div class="col-input col-input-compare-b">
             <label for="compare-b">Your fleet manager wage per hour</label>
-            <input id="compare-b" name="compare-b" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input id="compare-b" name="compare-b" type="number" />
+            </span>
           </div>
           <div class="col-input col-input-compare-c">
             <label for="compare-c">Fleet manager wage X 200hrs/year <br> (10% decreased efficiency)</label>
-            <input disabled id="compare-c" name="compare-c" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="compare-c" name="compare-c" type="number" />
+            </span>
           </div>
           <div class="col-input col-input-compare-d">
             <label for="compare-d">Annual installed GPS cost</label>
-            <input id="compare-d" name="compare-d" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input id="compare-d" name="compare-d" type="number" />
+            </span>
           </div>
           <div class="col-input col-input-compare-e">
             <label for="compare-e">Total Non-Member "Fleet Management" costs per year</label>
-            <input disabled id="compare-e" name="compare-e" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="compare-e" name="compare-e" type="number" />
+            </span>
           </div>
 
           <h3 class="middle-heading">Your fleet, &nbsp;<span>managed</span></h3>
 
           <div class="col-input col-input-compare-f">
             <label for="compare-f">Monthly membership cost per gas vehicle</label>
-            <input disabled value="120" id="compare-f" name="compare-f" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled value="120" id="compare-f" name="compare-f" type="number" />
+            </span>
           </div>
           <div class="col-input col-input-compare-g">
             <label for="compare-g">Number of gas vehicles</label>
@@ -176,7 +215,11 @@
           </div>
           <div class="col-input col-input-compare-h">
             <label for="compare-h">Total Fleet Management <strong>AND</strong> yearly maintenance costs</label>
-            <input disabled id="compare-h" name="compare-h" type="number" />
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="compare-h" name="compare-h" type="number" />
+        
+            </span>
           </div>
         </div>
 

@@ -46,6 +46,16 @@ label {
   font-weight: 500;
 }
 
+.col-input > span {
+  position: relative;
+
+  & > i {
+    position: absolute;
+    left: -15px;
+    bottom: 5px;
+  }
+}
+
 /* ====== RESET (Josh Comeau) ====== */
 /* 1. Use a more-intuitive box-sizing model. */
 *, *::before, *::after {
