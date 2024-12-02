@@ -1,6 +1,6 @@
 const SOME_RANDOM_FUCKING_NUMBER = 200;
 
-const print = document.querySelector("button");
+const print = document.querySelector(".print");
 
 // CALCULATIONS
 const otherGuyInputs = Array.from(document.querySelectorAll('input')).filter((input) => input.id.includes('og') && !input.id.includes('total'));
@@ -19,10 +19,15 @@ const compareE = document.querySelector('#compare-e') as HTMLInputElement;
 const compareF = document.querySelector('#compare-f') as HTMLInputElement;
 const compareG = document.querySelector('#compare-g') as HTMLInputElement;
 const compareH = document.querySelector('#compare-h') as HTMLInputElement;
+const compareI = document.querySelector('#compare-i') as HTMLInputElement;
+const compareJ = document.querySelector('#compare-j') as HTMLInputElement;
+
+const compareFOffering = document.querySelector('#gas-vehicle') as HTMLElement;
+const compareHOffering = document.querySelector('#diesel-vehicle') as HTMLElement;
 
 const aToECompare = [compareA, compareB, compareC, compareD, compareE];
-const fToHCompare = [compareF, compareG, compareH];
-const allCompareAToF = [compareA, compareB, compareC, compareD, compareE, compareF, compareG];
+const fToJCompare = [compareF, compareG, compareH, compareI, compareJ];
+const allCompareAToJ = [...aToECompare, ...fToJCompare];
 
 
 function checkOtherGuyTotal() {
@@ -30,7 +35,7 @@ function checkOtherGuyTotal() {
 
   if (canCalcTotal) {
     const values = otherGuyInputs.map(input => Number(Number(input.value).toFixed(2)));
-    const total = (values[0] + values[1] + values[2]) * values[3] * values[4];
+    const total = (values[0] * values[1]) + (values[2] * values[3] * values[4]);
     otherGuyTotal.value = `${total}`;
     compareA.value = otherGuyTotal.value;
     setDifference();
@@ -55,13 +60,6 @@ function setDifference() {
 }
 
 function checkAToECompare() {
-  console.log('here');
-
-  console.log(compareA.value);
-  console.log(compareB.value);
-  
-  
-  
   const canCalcC = !!compareA.value && !!compareB.value;
   const canCalcValues = !!compareA.value && !!compareB.value && !!compareD.value;
 
@@ -75,18 +73,30 @@ function checkAToECompare() {
   }
 }
 
-function checkFToHCompare() {
-  const canCalcValues = allCompareAToF.every(input => !!input.value);
+function checkFToICompare() {
+  const canCalcValues = allCompareAToJ.every(input => !!input.value);
 
   if (canCalcValues) {
     compareH.value = (Number(compareF.value) * Number(compareG.value) * 12).toString(); 
   }
 }
 
+function onGasPriceUpdate() {
+  compareFOffering.textContent = compareF.value;
+}
+
+function onDieselPriceUpdate() {
+  compareHOffering.textContent = compareH.value;
+}
+
+
 otherGuyInputs.forEach(input => input.addEventListener('input', checkOtherGuyTotal));
 withUsInputs.forEach(input => input.addEventListener('input', checkWithUsTotal));
 aToECompare.forEach(input => input.addEventListener('input', checkAToECompare));
-fToHCompare.forEach(input => input.addEventListener('input', checkFToHCompare));
+fToJCompare.forEach(input => input.addEventListener('input', checkFToICompare));
+
+compareF.addEventListener('input', onGasPriceUpdate);
+compareH.addEventListener('input', onDieselPriceUpdate);
 
 
 print?.addEventListener('click', () => {

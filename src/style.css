@@ -2,8 +2,7 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 
 :root {
-  font-family:  'Montserrat', Helvetica, Arial, Lucida, sans-serif;
-  font-weight: 400;
+  font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
 
   /* COLORS */
   --color-white: #FFFFFF;
@@ -18,42 +17,6 @@
   --space-med: 2rem;
   --space-lg: 5rem;
   --space-xl: 12rem;
-}
-
-html {
-  font-size: 125%;
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 3.5rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  width: 17rem;
-  align-self: center;
-  text-align: center;
-}
-
-input:focus {
-  outline: 2px solid var(--color-primary);
-  border-radius: 2px;
-}
-
-label {
-  font-size: .9rem;
-  font-weight: 500;
-}
-
-.col-input > span {
-  position: relative;
-
-  & > i {
-    position: absolute;
-    left: -15px;
-    bottom: 5px;
-  }
 }
 
 /* ====== RESET (Josh Comeau) ====== */
@@ -88,11 +51,91 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
+/* ====== BASE STYLES ====== */
+
+html {
+  font-size: 125%;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  width: 17rem;
+  align-self: center;
+  text-align: center;
+}
+
+input {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-grey);
+}
+
+input:focus {
+  outline: 2px solid var(--color-primary);
+  border-radius: 2px;
+}
+
+label {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.col-input > span {
+  position: relative;
+
+  & > i {
+    position: absolute;
+    left: -15px;
+    bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--color-grey);
+
+  }
+}
+
+
 /* ====== GRID SYSTEM ====== */
 body {
   display: grid;
   grid-template-columns: 1fr repeat(10, 1fr) 1fr;
   grid-template-rows: 52vh repeat(3, min-content) 5rem;
+}
+
+/* ====== GEAR/WRENCH IMAGES ====== */
+
+.calculation,
+.compare {
+  position: relative;
+
+  & .gear-container {
+    position: absolute;
+    left: -18%;
+    width: 62%;
+    z-index: -10;
+    opacity: .28;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.calculation {
+  & .gear-container {
+    bottom: 0;
+  }
+}
+
+.compare {
+  overflow-y: hidden;
+  & .gear-container {
+    bottom: -10%;
+  }
 }
 
 /* ====== HEADER ====== */
@@ -169,84 +212,105 @@ header {
 
 /* ====== CALCULATION ====== */
 
-form.calculation {
+.calculation {
+  background-color: rgba(37, 159, 186, 0.075);
   padding: var(--space-med);
   grid-column: 1 / -1;
 
-  background: var(--color-primary-light);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-
-  & > *:not(:last-child) {
-    width: 100%;
-  }
-
-  & .container {
+  & form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: var(--space-med);
-
-    & > * {
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  
+    & > *:not(:last-child) {
+      width: 100%;
+    }
+  
+    & .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: var(--space-med);
+  
+      & > * {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+  
+        & .col-input {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          align-items: end;
+          gap: var(--space-sm);
+  
+          & input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--color-grey);
+            width: 6.5rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+  
+    & .savings {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: var(--space-xs);
-
-      & .fa-solid {
-        font-size: 1rem;
-        color: var(--color-grey);
+  
+      & .container {
+        /* Heads up the above '.container' targets this '.container' */
+        display: flex;
+        justify-content: space-around;
       }
-
+  
+      & .total-savings {
+        background-color: var(--color-primary);
+        padding: 1rem 5rem;
+        margin-top: var(--space-med);
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  
+        & label {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+  
+     
       & .col-input {
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-        align-items: end;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
         gap: var(--space-sm);
 
+        & .use-us {
+          color: var(--color-white);
+          text-transform: uppercase;
+        }
+  
         & input {
           background: transparent;
           border: none;
           border-bottom: 2px solid var(--color-grey);
-          width: 5rem;
+          width: 6.5rem;
           text-align: center;
+        }
+  
+        & #total-savings {
+          font-size: 2.5rem;
+          width: 12rem;
         }
       }
     }
   }
-
-  & .savings {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    & .container {
-      /* Heads up the above '.container' targets this '.container' */
-      display: flex;
-      justify-content: space-around;
-    }
-
-   
-    & .col-input {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      text-align: center;
-      gap: var(--space-sm);
-
-      & input {
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid var(--color-grey);
-        width: 7rem;
-        text-align: center;
-      }
-    }
-  }
 }
+
+
 
 /* ====== COMPARE ====== */
 
@@ -321,12 +385,12 @@ form.calculation {
           background: transparent;
           border: none;
           border-bottom: 2px solid var(--color-grey);
-          width: 5rem;
+          width: 6.5rem;
           text-align: center;
         }
 
         &.col-input-compare-e,
-        &.col-input-compare-h {
+        &.col-input-compare-j {
           margin-top: var(--space-xxs);
           display: flex;
           flex-direction: column-reverse;
@@ -338,7 +402,7 @@ form.calculation {
             background: transparent;
             border: none;
             border-bottom: 2px solid var(--color-grey);
-            width: 7rem;
+            width: 8rem;
             text-align: center;
           }
         }
@@ -411,23 +475,29 @@ form.calculation {
     }
   }
 
-  & button {
+  & .btn-container {
     align-self: flex-end;
-    padding: var(--space-xxs) var(--space-med);
-    border-radius: 3px;
-    border: 2px solid transparent;
-    background: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: all .2s;
-    cursor: pointer;
-  }
 
-  & button:hover {
-    border: 2px solid var(--color-grey);
-    background: var(--color-primary);
-    color: var(--color-grey);
+    display: flex;
+    gap: var(--space-sm);
+
+    & button {
+      padding: var(--space-xxs) var(--space-med);
+      border-radius: 3px;
+      border: 2px solid transparent;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: all .2s;
+      cursor: pointer;
+    }
+  
+    & button:hover {
+      border: 2px solid var(--color-grey);
+      background: var(--color-primary);
+      color: var(--color-grey);
+    }
   }
 }
 
@@ -568,13 +638,13 @@ form.calculation {
   @page {
     margin: 0;
   }
-  body {
+  * {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
 
 
-  form.calculation {
+  .calculation {
     background: unset;
 
     & .container > * {
@@ -591,6 +661,7 @@ form.calculation {
   }
 
   .print, 
+  .quote, 
   .contact,
   .space-holder {
     display: none;
