@@ -11,8 +11,8 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>High Torque - Fleet</title>
-    <script type="module" crossorigin src="./assets/index-EDDLgln4.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-XsA_PcWA.css">
+    <script type="module" crossorigin src="./assets/index-BFVmKvEm.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-ChMjG2fj.css">
   </head>
   <body>
 
@@ -51,116 +51,125 @@
     </section>
 
     <!-- CALCULATIONS -->
-    <form class="calculation">
-      <div class="container">
-        <div class="other-guys">
-          <h3>Your oil change with the "other guys"</h3>
-          <div class="col-input col-input-1">
-            <label for="og-oil-change">Cost per Oil Change</label>
-            <span>
-            <i class="fa-solid fa-dollar-sign"></i>
-            <input id="og-oil-change" name="og-oil-change" type="number" />
-            </span>
-          </div>
-          <i class="fa-solid fa-plus"></i>
-
-          <div class="col-input col-input-2">
-            <label for="og-lost-wage">Lost Employee Wage (Hourly)</label>
-            <span>
+    <section class="calculation">
+      <div class="gear-container"><img src="./gear-wrench.png" alt="Wrench and gear logo"></div>
+      <form>
+        <div class="container">
+          <!-- OTHER GUYS -->
+          <div class="other-guys">
+            <h3>Your oil change with the "other guys"</h3>
+  
+            
+            <div class="col-input col-input-1">
+              <label for="og-oil-change">Cost per Oil Change</label>
+              <span>
               <i class="fa-solid fa-dollar-sign"></i>
-              <input id="og-lost-wage" name="og-lost-wage" type="number" />
-            </span>
-          </div>
-          <i class="fa-solid fa-plus"></i>
+              <input id="og-oil-change" name="og-oil-change" type="number" />
+              </span>
+            </div>
+            <i class="fa-solid fa-plus"></i>
 
-          <div class="col-input col-input-3">
-            <label for="og-lost-billed-hours">Lost Company Billable Hours</label>
-            <input id="og-lost-billed-hours" name="og-lost-billed-hours" type="number" />
+            <div class="col-input col-input-2">
+              <label for="og-lost-wage">Lost Employee Wage (Hourly)</label>
+              <span>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input id="og-lost-wage" name="og-lost-wage" type="number" />
+              </span>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+  
+            <div class="col-input col-input-3">
+              <label for="og-lost-billed-hours">Lost Company Billable Hours</label>
+              <input id="og-lost-billed-hours" name="og-lost-billed-hours" type="number" />
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+  
+            <div class="col-input col-input-4">
+              <label for="og-num-vehicles">Number of Vehicles</label>
+              <input id="og-num-vehicles" name="og-num-vehicles" type="number" />
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+  
+            <div class="col-input col-input-5">
+              <label for="og-yearly-services">Number of Services per Year</label>
+              <input id="og-yearly-services" name="og-yearly-services" type="number" />
+            </div>
           </div>
-          <i class="fa-solid fa-xmark"></i>
-
-          <div class="col-input col-input-4">
-            <label for="og-num-vehicles">Number of Vehicles</label>
-            <input id="og-num-vehicles" name="og-num-vehicles" type="number" />
-          </div>
-          <i class="fa-solid fa-xmark"></i>
-
-          <div class="col-input col-input-5">
-            <label for="og-yearly-services">Number of Services per Year</label>
-            <input id="og-yearly-services" name="og-yearly-services" type="number" />
+    
+          <!-- WITH US -->
+          <div class="with-us">
+            <h3>Your synthetic service with us</h3>
+            <div class="col-input col-input-1">
+              <label for="wu-oil-change">Cost per Oil Change</label>
+              <span>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input value="135" id="wu-oil-change" name="wu-oil-change" type="number" />
+              </span>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+  
+            <div class="col-input col-input-2">
+              <label for="wu-lost-wage">Lost Employee Wage (Hourly)</label>
+              <span>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input disabled value="0" id="wu-lost-wage" name="wu-lost-wage" type="number" />
+              </span>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+  
+            <div class="col-input col-input-3">
+              <label for="wu-lost-billed-hours">Lost Company Billable Hours</label>
+              <input disabled value="0" id="wu-lost-billed-hours" name="wu-lost-billed-hours" type="number" />
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+  
+            <div class="col-input col-input-4">
+              <label for="wu-num-vehicles">Number of Vehicles</label>
+              <input id="wu-num-vehicles" name="wu-num-vehicles" type="number" />
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+  
+            <div class="col-input col-input-5">
+              <label for="wu-yearly-services">Number of Services per Year</label>
+              <input id="wu-yearly-services" name="wu-yearly-services" type="number" />
+            </div>
           </div>
         </div>
   
-        <div class="with-us">
-          <h3>Your synthetic service with us</h3>
-          <div class="col-input col-input-1">
-            <label for="wu-oil-change">Cost per Oil Change</label>
-            <span>
-              <i class="fa-solid fa-dollar-sign"></i>
-              <input disabled value="135" id="wu-oil-change" name="wu-oil-change" type="number" />
-            </span>
+        <div class="savings">        
+          <div class="container">
+            <div class="col-input col-input-savings-a">
+              <label for="og-yearly-total">Total "A" per year</label>
+              <span>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input disabled id="og-yearly-total" name="og-yearly-total" type="number" />
+              </span>
+            </div>
+            <div class="col-input col-input-savings-b">
+              <label for="wu-yearly-total">Total "B" per year</label>
+              <span>
+                <i class="fa-solid fa-dollar-sign "></i>
+                <input disabled id="wu-yearly-total" name="wu-yearly-total" type="number">
+              </span>
+            </div>
           </div>
-          <i class="fa-solid fa-plus"></i>
-
-          <div class="col-input col-input-2">
-            <label for="wu-lost-wage">Lost Employee Wage (Hourly)</label>
-            <span>
-              <i class="fa-solid fa-dollar-sign"></i>
-              <input disabled value="0" id="wu-lost-wage" name="wu-lost-wage" type="number" />
-            </span>
-          </div>
-          <i class="fa-solid fa-plus"></i>
-
-          <div class="col-input col-input-3">
-            <label for="wu-lost-billed-hours">Lost Company Billable Hours</label>
-            <input disabled value="0" id="wu-lost-billed-hours" name="wu-lost-billed-hours" type="number" />
-          </div>
-          <i class="fa-solid fa-xmark"></i>
-
-          <div class="col-input col-input-4">
-            <label for="wu-num-vehicles">Number of Vehicles</label>
-            <input id="wu-num-vehicles" name="wu-num-vehicles" type="number" />
-          </div>
-          <i class="fa-solid fa-xmark"></i>
-
-          <div class="col-input col-input-5">
-            <label for="wu-yearly-services">Number of Services per Year</label>
-            <input id="wu-yearly-services" name="wu-yearly-services" type="number" />
+          <div class="total-savings">
+            <div class="col-input col-input-total">
+              <label for="total-savings">"A" - "B" = total savings per year<br> <span class="use-us">So, why aren't you using us?</span></label>
+              <span>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input disabled id="total-savings" name="total-savings" type="number" />
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="savings">
-        <div class="container">
-          <div class="col-input col-input-savings-a">
-            <label for="og-yearly-total">Total "A" per year</label>
-            <span>
-              <i class="fa-solid fa-dollar-sign"></i>
-              <input disabled id="og-yearly-total" name="og-yearly-total" type="number" />
-            </span>
-          </div>
-          <div class="col-input col-input-savings-b">
-            <label for="wu-yearly-total">Total "B" per year</label>
-            <span>
-              <i class="fa-solid fa-dollar-sign "></i>
-              <input disabled id="wu-yearly-total" name="wu-yearly-total" type="number">
-            </span>
-          </div>
-        </div>
-        <div class="total-savings">
-          <div class="col-input col-input-total">
-            <label for="total-savings">"A" - "B" = total savings per year<br> So, why aren't you using us?</label>
-            <span>
-              <i class="fa-solid fa-dollar-sign"></i>
-              <input disabled id="total-savings" name="total-savings" type="number" />
-            </span>
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </section>
 
     <!-- COMPARE -->
     <section class="compare">
+      <div class="gear-container"><img src="./gear-wrench.png" alt="Wrench and gear logo"></div>
+
       <div class="container">
         <div class="calculations">
           <h3>How do we compare? <br><span>Costs for non-members</span></h3>
@@ -206,7 +215,7 @@
             <label for="compare-f">Monthly membership cost per gas vehicle</label>
             <span>
               <i class="fa-solid fa-dollar-sign"></i>
-              <input disabled value="120" id="compare-f" name="compare-f" type="number" />
+              <input value="120" id="compare-f" name="compare-f" type="number" />
             </span>
           </div>
           <div class="col-input col-input-compare-g">
@@ -214,11 +223,21 @@
             <input id="compare-g" name="compare-g" type="number" />
           </div>
           <div class="col-input col-input-compare-h">
-            <label for="compare-h">Total Fleet Management <strong>AND</strong> yearly maintenance costs</label>
+            <label for="compare-h">Monthly membership cost per diesel vehicle</label>
             <span>
               <i class="fa-solid fa-dollar-sign"></i>
-              <input disabled id="compare-h" name="compare-h" type="number" />
-        
+              <input value="150" id="compare-h" name="compare-h" type="number" />
+            </span>
+          </div>
+          <div class="col-input col-input-compare-i">
+            <label for="compare-i">Number of diesel vehicles</label>
+            <input id="compare-i" name="compare-i" type="number" />
+          </div>
+          <div class="col-input col-input-compare-j">
+            <label for="compare-j">Total Fleet Management <strong>AND</strong> yearly maintenance costs</label>
+            <span>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input disabled id="compare-j" name="compare-j" type="number" />
             </span>
           </div>
         </div>
@@ -253,7 +272,7 @@
             <div class="banner">
               <span class="highlight"></span>
               <p>Gasoline Vehicles</p>
-              <p>$120/month/unit</p>
+              <p>$<span id="gas-vehicle">120</span>/month/unit</p>
             </div>
             <p>Vehicle tracking with OBD compatible GPS device <br> 
               Maintenance interval tracking with automatic reminders when a vehicle is due for service
@@ -270,13 +289,16 @@
             <div class="banner">
               <span class="highlight"></span>
               <p>Diesel Vehicles</p>
-              <p>$150/month/unit</p>
+              <p>$<span id="diesel-vehicle">150</span>/month/unit</p>
             </div>
             <p>Includes everything above for diesel engines</p>
           </div>
         </div>
       </div>
-      <button class="print">Print</button>
+      <div class="btn-container">
+        <button class="quote" onclick="window.open('https://hightorque.ca/contact-high-torque-mobile-mechanics/', '_blank')">Get Exact Quote</button>
+        <button class="print">Print</button>
+      </div>
     </section>
 
     <!-- FOOTER -->
