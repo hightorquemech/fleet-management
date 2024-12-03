@@ -1,4 +1,4 @@
-const SOME_RANDOM_FUCKING_NUMBER = 200;
+const TEN_PERCENT_DECREASED_FLEET_MANAGER_EFFICIENCY_PER_YEAR_IN_HOURS = 200;
 
 const print = document.querySelector(".print");
 
@@ -64,7 +64,7 @@ function checkAToECompare() {
   const canCalcValues = !!compareA.value && !!compareB.value && !!compareD.value;
 
   if (canCalcC) {
-    compareC.value = (Number(compareB.value) * SOME_RANDOM_FUCKING_NUMBER).toString();
+    compareC.value = (Number(compareB.value) * TEN_PERCENT_DECREASED_FLEET_MANAGER_EFFICIENCY_PER_YEAR_IN_HOURS).toString();
   }
 
   if (canCalcValues) {
