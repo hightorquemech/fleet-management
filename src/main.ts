@@ -32,11 +32,6 @@ const compareH = document.querySelector("#compare-h") as HTMLInputElement;
 const compareI = document.querySelector("#compare-i") as HTMLInputElement;
 const compareJ = document.querySelector("#compare-j") as HTMLInputElement;
 
-const compareFOffering = document.querySelector("#gas-vehicle") as HTMLElement;
-const compareHOffering = document.querySelector(
-  "#diesel-vehicle"
-) as HTMLElement;
-
 const aToECompare = [compareA, compareB, compareC, compareD, compareE];
 const fToICompare = [compareF, compareG, compareH, compareI];
 const allCompareAToI = [...aToECompare, ...fToICompare];
@@ -107,14 +102,6 @@ function checkFToICompare() {
   }
 }
 
-function onGasPriceUpdate() {
-  compareFOffering.textContent = compareF.value;
-}
-
-function onDieselPriceUpdate() {
-  compareHOffering.textContent = compareH.value;
-}
-
 otherGuyInputs.forEach((input) =>
   input.addEventListener("input", checkOtherGuyTotal)
 );
@@ -127,9 +114,6 @@ aToECompare.forEach((input) =>
 fToICompare.forEach((input) =>
   input.addEventListener("input", checkFToICompare)
 );
-
-compareF.addEventListener("input", onGasPriceUpdate);
-compareH.addEventListener("input", onDieselPriceUpdate);
 
 print?.addEventListener("click", () => {
   window.print();
