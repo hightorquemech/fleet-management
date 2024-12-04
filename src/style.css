@@ -332,10 +332,15 @@ header {
     gap: var(--space-med);
 
     & .calculations {
+      position: relative;
       page-break-after: always;
 
       & > h3 {
         margin-bottom: var(--space-sm);
+      }
+
+      & .gear-calc-print {
+        display: none;
       }
     }
 
@@ -692,6 +697,23 @@ header {
   }
 
   .compare {
+     & .container {
+      & .calculations {
+        & .gear-calc-print {
+          display: block;
+          position: absolute;
+          left: -102%;
+          width: 150%;
+          z-index: -10;
+          opacity: .28;
+      
+          & img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
     & .gear-container {
       bottom: 0%;
     }
