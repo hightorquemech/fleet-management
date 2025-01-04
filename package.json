@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/ht-fleet",
+    "build": "tsc && vite build --base=/fleet-management",
     "preview": "vite preview"
   },
   "devDependencies": {
